@@ -16,29 +16,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="eK0-Hw-y6p">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="RgG-D4-ZXT">
                                 <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="FBo-Jp-lA7">
-                                    <size key="itemSize" width="128" height="128"/>
-                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                </collectionViewFlowLayout>
-                                <cells/>
-                            </collectionView>
+                            </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="jaw-eS-iKG"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="jaw-eS-iKG" firstAttribute="trailing" secondItem="eK0-Hw-y6p" secondAttribute="trailing" id="1ne-Ba-Ne9"/>
-                            <constraint firstItem="jaw-eS-iKG" firstAttribute="bottom" secondItem="eK0-Hw-y6p" secondAttribute="bottom" id="7dT-I9-4Y2"/>
-                            <constraint firstItem="eK0-Hw-y6p" firstAttribute="top" secondItem="jaw-eS-iKG" secondAttribute="top" id="agS-Rm-mZU"/>
-                            <constraint firstItem="eK0-Hw-y6p" firstAttribute="leading" secondItem="jaw-eS-iKG" secondAttribute="leading" id="d6R-zP-br8"/>
+                            <constraint firstItem="jaw-eS-iKG" firstAttribute="trailing" secondItem="RgG-D4-ZXT" secondAttribute="trailing" id="HM5-wM-1lo"/>
+                            <constraint firstItem="RgG-D4-ZXT" firstAttribute="top" secondItem="jaw-eS-iKG" secondAttribute="top" id="bpS-G3-fqQ"/>
+                            <constraint firstItem="jaw-eS-iKG" firstAttribute="bottom" secondItem="RgG-D4-ZXT" secondAttribute="bottom" id="pAX-g8-Bi0"/>
+                            <constraint firstItem="RgG-D4-ZXT" firstAttribute="leading" secondItem="jaw-eS-iKG" secondAttribute="leading" id="ySf-6l-Kjt"/>
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionView" destination="eK0-Hw-y6p" id="kFR-m4-fwA"/>
+                        <outlet property="tableView" destination="RgG-D4-ZXT" id="Z8b-vW-PFI"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6R-Zn-n6i" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

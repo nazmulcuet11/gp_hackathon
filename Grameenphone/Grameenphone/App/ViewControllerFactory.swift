@@ -42,6 +42,7 @@ class ViewControllerFactory {
     func getFavouriteItemsVC() -> UIViewController {
         let vc = FavouriteItemsVC.instantiate()
         vc.store = favouriteItemsStore
+        vc.factory = self
         return vc
     }
 }

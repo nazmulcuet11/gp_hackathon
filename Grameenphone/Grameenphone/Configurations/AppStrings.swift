@@ -11,4 +11,5 @@ enum AppStrings {
     static let homePageTitle = "Grameenphone"
     static let movieDetailPageTitle = "Movie Detail"
     static let tvSeriesDetailPageTitle = "TV Series Detail"
+    static let favouriteItemsVCTitle = "Favourite Items"
 }

@@ -48,4 +48,35 @@ class MovieService {
             }
         })
     }
+
+    func getMovieDetails(
+        for movieId: Int,
+        onSuccess: @escaping (MovieDetails) -> Void,
+        onFailure: @escaping (String) -> Void
+    ) {
+
+        let endPoint = APIEndpoint(
+            method: .get,
+            path: "/movie/\(movieId)"
+        )
+
+        let parmaeters = ["api_key": Constants.Server.apiKey]
+
+        let router = APIRouter(
+            endpoint: endPoint,
+            parameters: parmaeters,
+            bodyData: nil
+        )
+
+        APIClient.performRequest(router: router, completion: {
+            (result: AFResult<MovieDetails>) in
+
+            switch result {
+            case .success(let response):
+                onSuccess(response)
+            case .failure(let error):
+                onFailure(error.localizedDescription)
+            }
+        })
+    }
 }

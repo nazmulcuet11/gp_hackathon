@@ -15,9 +15,17 @@ class ViewControllerFactory {
 
     func getHomeVC() -> UIViewController {
         let vc = HomeVC.instantiate()
+        vc.factory = self
         vc.movieService = movieService
         vc.tvSeriesService = tvSeriesService
         vc.trendinContentService = trendingContentService
+        return vc
+    }
+
+    func getMovieDetailVC(for movie: Movie) -> UIViewController {
+        let vc = MovieDetailVC.instantiate()
+        vc.movieId = movie.id
+        vc.movieService = movieService
         return vc
     }
 }

@@ -11,6 +11,7 @@ class HomeVC: UIViewController, StoryboardBased {
 
     // MARK: - Dependency
 
+    var factory: ViewControllerFactory!
     var movieService: MovieService!
     var tvSeriesService: TVSeriesService!
     var trendinContentService: TrendingContentService!
@@ -200,7 +201,8 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
 
 extension HomeVC: MovieSelectionDelegate {
     func didSelectMovie(_ movie: Movie) {
-        print(movie)
+        let vc = factory.getMovieDetailVC(for: movie)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }
 

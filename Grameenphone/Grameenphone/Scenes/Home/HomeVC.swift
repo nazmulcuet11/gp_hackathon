@@ -20,6 +20,7 @@ class HomeVC: UIViewController, StoryboardBased {
 
     // MARK: - Private properties
 
+    private var loadingMovies = false
     private var movies = [Movie]()
 
     // MARK: - Lifecycle
@@ -32,7 +33,8 @@ class HomeVC: UIViewController, StoryboardBased {
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 200.0
 
-        tableView.registerNibCell(MovieCell.self)
+        tableView.registerNibCell(MoviesCollectionViewContainerCell.self)
+        tableView.registerNibCell(TVSeriesCollectionViewContainerCell.self)
         tableView.registerNibHeaderFooter(HomeSceneTableHeaderView.self)
 
         tableView.separatorStyle = .none
@@ -49,6 +51,7 @@ class HomeVC: UIViewController, StoryboardBased {
 
         activityIndicator.startAnimating()
 
+        loadingMovies = true
         // load movies
         let movieRequest = PopularMoviesRequest(
             primaryReleaseYear: "2020",
@@ -59,12 +62,14 @@ class HomeVC: UIViewController, StoryboardBased {
             onSuccess: {
                 (response) in
 
+                self.loadingMovies = false
                 self.activityIndicator.stopAnimating()
                 self.movies = response.results
                 self.tableView.reloadData()
             }, onFailure: {
                 (errorMessage) in
 
+                self.loadingMovies = false
                 self.activityIndicator.stopAnimating()
                 showAlert(title: "Failed", message: errorMessage, on: self)
             }
@@ -75,11 +80,14 @@ class HomeVC: UIViewController, StoryboardBased {
 extension HomeVC {
     enum SectionTypes: CaseIterable {
         case popularMovies
+        case tvSeries
 
         var title: String {
             switch self {
             case .popularMovies:
                 return "Popular Movies"
+            case .tvSeries:
+                return "Popular TV Series"
             }
         }
     }
@@ -94,15 +102,23 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
         let sectionType = SectionTypes.allCases[section]
         switch sectionType {
         case .popularMovies:
-            return movies.count
+            return 1
+        case .tvSeries:
+            return 1
         }
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(MovieCell.self, for: indexPath)
-        let movie = movies[indexPath.row]
-        cell.configure(with: movie)
-        return cell
+        let sectionType = SectionTypes.allCases[indexPath.section]
+        switch sectionType {
+        case .popularMovies:
+            let cell = tableView.dequeueReusableCell(MoviesCollectionViewContainerCell.self, for: indexPath)
+            cell.configure(with: movies, loading: loadingMovies)
+            return cell
+        case .tvSeries:
+            let cell = tableView.dequeueReusableCell(TVSeriesCollectionViewContainerCell.self, for: indexPath)
+            return cell
+        }
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -111,11 +127,8 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionType = SectionTypes.allCases[section]
-        switch sectionType {
-        case .popularMovies:
-            let view = tableView.dequeueReusableHeaderFooterView(HomeSceneTableHeaderView.self)
-            view.setTitle(sectionType.title)
-            return view
-        }
+        let view = tableView.dequeueReusableHeaderFooterView(HomeSceneTableHeaderView.self)
+        view.setTitle(sectionType.title)
+        return view
     }
 }

@@ -8,7 +8,7 @@
 import UIKit
 import Kingfisher
 
-class MovieCell: UITableViewCell {
+class MovieCell: UICollectionViewCell {
 
     @IBOutlet weak var containerView: UIView!
     @IBOutlet weak var posterView: UIImageView!
@@ -34,10 +34,6 @@ class MovieCell: UITableViewCell {
         if let url = URL(string: Constants.BaseImagePaths.poster + movie.posterPath) {
             posterView.kf.setImage(with: url)
         }
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
     }
 
     private func setupUI() {

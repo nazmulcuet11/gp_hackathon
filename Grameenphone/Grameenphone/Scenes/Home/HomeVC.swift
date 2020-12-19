@@ -48,6 +48,7 @@ class HomeVC: UIViewController, StoryboardBased {
         tableView.registerNibHeaderFooter(HomeSceneTableHeaderView.self)
 
         tableView.separatorStyle = .none
+        tableView.allowsSelection = false
 
         tableView.dataSource = self
         tableView.delegate = self
@@ -171,11 +172,11 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
         switch sectionType {
         case .popularMovies:
             let cell = tableView.dequeueReusableCell(MoviesCollectionViewContainerCell.self, for: indexPath)
-            cell.configure(with: movies, loading: loadingMovies)
+            cell.configure(with: movies, loading: loadingMovies, delegate: self)
             return cell
         case .tvSeries:
             let cell = tableView.dequeueReusableCell(TVSeriesCollectionViewContainerCell.self, for: indexPath)
-            cell.configure(with: tvSerieses, loading: loadingTVSeries)
+            cell.configure(with: tvSerieses, loading: loadingTVSeries, delegate: self)
             return cell
         case .trendingContent:
             let cell = tableView.dequeueReusableCell(TrendingContentCell.self, for: indexPath)
@@ -194,5 +195,17 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
         let view = tableView.dequeueReusableHeaderFooterView(HomeSceneTableHeaderView.self)
         view.setTitle(sectionType.title)
         return view
+    }
+}
+
+extension HomeVC: MovieSelectionDelegate {
+    func didSelectMovie(_ movie: Movie) {
+        print(movie)
+    }
+}
+
+extension HomeVC: TVSeriesSelecetionDelegate {
+    func didSelectTVSeries(_ tvSeries: TVSeries) {
+        print(tvSeries)
     }
 }

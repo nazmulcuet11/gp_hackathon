@@ -7,12 +7,17 @@
 
 import UIKit
 
+protocol TVSeriesSelecetionDelegate: class {
+    func didSelectTVSeries(_ tvSeries: TVSeries)
+}
+
 class TVSeriesCollectionViewContainerCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     private var serieses = [TVSeries]()
+    private weak var delegate: TVSeriesSelecetionDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,13 +28,14 @@ class TVSeriesCollectionViewContainerCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
-    func configure(with serieses: [TVSeries], loading: Bool) {
+    func configure(with serieses: [TVSeries], loading: Bool, delegate: TVSeriesSelecetionDelegate?) {
         if loading {
             activityIndicator.startAnimating()
         } else {
             activityIndicator.stopAnimating()
         }
 
+        self.delegate = delegate
         self.serieses = serieses
         collectionView.reloadData()
     }
@@ -53,6 +59,11 @@ extension TVSeriesCollectionViewContainerCell: UICollectionViewDataSource, UICol
         let series = serieses[indexPath.row]
         cell.configure(with: series)
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let tvSeries = serieses[indexPath.row]
+        delegate?.didSelectTVSeries(tvSeries)
     }
 }
 

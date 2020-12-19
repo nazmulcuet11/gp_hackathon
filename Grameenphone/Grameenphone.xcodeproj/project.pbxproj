@@ -149,6 +149,13 @@
 			path = Grameenphone/Scenes/Home/PopularTVSeries;
 			sourceTree = SOURCE_ROOT;
 		};
+		7C21241E258E0A2800EB0039 /* MovieDetails */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = MovieDetails;
+			sourceTree = "<group>";
+		};
 		7C302DFD258DBDF60071471D = {
 			isa = PBXGroup;
 			children = (
@@ -270,6 +277,7 @@
 			isa = PBXGroup;
 			children = (
 				7C302E6F258DCE340071471D /* Home */,
+				7C21241E258E0A2800EB0039 /* MovieDetails */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";

@@ -7,12 +7,17 @@
 
 import UIKit
 
+protocol MovieSelectionDelegate: class {
+    func didSelectMovie(_ movie: Movie)
+}
+
 class MoviesCollectionViewContainerCell: UITableViewCell {
 
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
     private var movies = [Movie]()
+    private weak var delegate: MovieSelectionDelegate?
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,7 +28,7 @@ class MoviesCollectionViewContainerCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
 
-    func configure(with movies: [Movie], loading: Bool) {
+    func configure(with movies: [Movie], loading: Bool, delegate: MovieSelectionDelegate?) {
 
         if loading {
             activityIndicator.startAnimating()
@@ -31,6 +36,7 @@ class MoviesCollectionViewContainerCell: UITableViewCell {
             activityIndicator.stopAnimating()
         }
 
+        self.delegate = delegate
         self.movies = movies
         self.collectionView.reloadData()
     }
@@ -53,6 +59,11 @@ extension MoviesCollectionViewContainerCell: UICollectionViewDataSource, UIColle
         let movie = movies[indexPath.row]
         cell.configure(with: movie)
         return cell
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let movie = movies[indexPath.row]
+        delegate?.didSelectMovie(movie)
     }
 }
 

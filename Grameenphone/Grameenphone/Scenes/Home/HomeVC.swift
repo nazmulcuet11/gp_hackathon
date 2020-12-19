@@ -13,6 +13,7 @@ class HomeVC: UIViewController, StoryboardBased {
 
     var movieService: MovieService!
     var tvSeriesService: TVSeriesService!
+    var trendinContentService: TrendingContentService!
 
     // MARK: - Outlets
 
@@ -27,6 +28,9 @@ class HomeVC: UIViewController, StoryboardBased {
     private var loadingTVSeries = false
     private var tvSerieses = [TVSeries]()
 
+    private var loadingTrendingContent = false
+    private var trendingContents = [TrendingContent]()
+
     // MARK: - Lifecycle
 
     override func viewDidLoad() {
@@ -39,6 +43,8 @@ class HomeVC: UIViewController, StoryboardBased {
 
         tableView.registerNibCell(MoviesCollectionViewContainerCell.self)
         tableView.registerNibCell(TVSeriesCollectionViewContainerCell.self)
+        tableView.registerNibCell(TrendingContentCell.self)
+
         tableView.registerNibHeaderFooter(HomeSceneTableHeaderView.self)
 
         tableView.separatorStyle = .none
@@ -102,6 +108,25 @@ class HomeVC: UIViewController, StoryboardBased {
                 showAlert(title: "Failed", message: errorMessage, on: self)
             }
         )
+
+        // load trending contents
+        loadingTrendingContent = true
+        trendinContentService.getTrendingContents(
+            onSuccess: {
+                (response) in
+
+                self.loadingTrendingContent = false
+                self.activityIndicator.stopAnimating()
+                self.trendingContents = response.results
+                self.tableView.reloadData()
+            }, onFailure: {
+                (errorMessage) in
+
+                self.loadingTrendingContent = false
+                self.activityIndicator.stopAnimating()
+                showAlert(title: "Failed", message: errorMessage, on: self)
+            }
+        )
     }
 }
 
@@ -109,6 +134,7 @@ extension HomeVC {
     enum SectionTypes: CaseIterable {
         case popularMovies
         case tvSeries
+        case trendingContent
 
         var title: String {
             switch self {
@@ -116,6 +142,8 @@ extension HomeVC {
                 return "Popular Movies"
             case .tvSeries:
                 return "Popular TV Series"
+            case .trendingContent:
+                return "Trending Contents"
             }
         }
     }
@@ -133,6 +161,8 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
             return 1
         case .tvSeries:
             return 1
+        case .trendingContent:
+            return trendingContents.count
         }
     }
 
@@ -146,6 +176,11 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
         case .tvSeries:
             let cell = tableView.dequeueReusableCell(TVSeriesCollectionViewContainerCell.self, for: indexPath)
             cell.configure(with: tvSerieses, loading: loadingTVSeries)
+            return cell
+        case .trendingContent:
+            let cell = tableView.dequeueReusableCell(TrendingContentCell.self, for: indexPath)
+            let trendingContent = trendingContents[indexPath.row]
+            cell.configure(with: trendingContent)
             return cell
         }
     }

@@ -9,13 +9,15 @@ import UIKit
 
 class ViewControllerFactory {
     
-    private let movieServiceRemote = MovieServiceRemote()
-    private let tvSeriesServiceRemote = TVSeriesServiceRemote()
+    private let movieService = MovieService()
+    private let tvSeriesService = TVSeriesService()
+    private let trendingContentService = TrendingContentService()
 
     func getHomeVC() -> UIViewController {
         let vc = HomeVC.instantiate()
-        vc.movieService = movieServiceRemote
-        vc.tvSeriesService = tvSeriesServiceRemote
+        vc.movieService = movieService
+        vc.tvSeriesService = tvSeriesService
+        vc.trendinContentService = trendingContentService
         return vc
     }
 }

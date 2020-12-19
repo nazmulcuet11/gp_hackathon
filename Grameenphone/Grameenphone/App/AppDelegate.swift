@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         window = UIWindow()
 
-        let navVC = HomeNavVC(rootViewController: viewControllerFactory.getHomeVC())
+        let navVC = UINavigationController(rootViewController: viewControllerFactory.getHomeVC())
         window?.rootViewController = navVC
 
         setupLogger()

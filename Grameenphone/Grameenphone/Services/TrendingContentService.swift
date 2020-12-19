@@ -1,5 +1,5 @@
 //
-//  MovieService.swift
+//  TrendingContentServiceRemote.swift
 //  Grameenphone
 //
 //  Created by Nazmul Islam on 19/12/20.
@@ -8,11 +8,11 @@
 import Foundation
 import Alamofire
 
-fileprivate extension PopularMoviesRequest {
+fileprivate extension TrendingContentRequest {
     var endPoint: APIEndpoint {
         return APIEndpoint(
             method: .get,
-            path: "/discover/movie"
+            path: "/trending/all/week"
         )
     }
 
@@ -29,16 +29,12 @@ fileprivate extension PopularMoviesRequest {
     }
 }
 
-class MovieServiceRemote: MovieService {
+class TrendingContentService {
+    func getTrendingContents(onSuccess: @escaping (TrendingContentResponse) -> Void, onFailure: @escaping (String) -> Void) {
 
-    func getPopularMovies(
-        request: PopularMoviesRequest,
-        onSuccess: @escaping (PopularMoviesResponse) -> Void,
-        onFailure: @escaping (String) -> Void
-    ) {
-
+        let request = TrendingContentRequest()
         APIClient.performRequest(router: request.router, completion: {
-            (result: AFResult<PopularMoviesResponse>) in
+            (result: AFResult<TrendingContentResponse>) in
 
             switch result {
             case .success(let response):

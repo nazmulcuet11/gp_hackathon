@@ -1,5 +1,5 @@
 //
-//  MovieDetailVC.swift
+//  TVSeriesDetailsVC.swift
 //  Grameenphone
 //
 //  Created by Nazmul Islam on 19/12/20.
@@ -7,12 +7,12 @@
 
 import UIKit
 
-class MovieDetailVC: UIViewController, StoryboardBased {
+class TVSeriesDetailsVC: UIViewController, StoryboardBased {
 
     // MARK: - Dependency
 
-    var movieId: Int!
-    var movieService: MovieService!
+    var seriesId: Int!
+    var service: TVSeriesService!
 
     // MARK: - Outlets
 
@@ -20,42 +20,32 @@ class MovieDetailVC: UIViewController, StoryboardBased {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var overViewLabel: UILabel!
     @IBOutlet weak var genreLabel: UILabel!
-    @IBOutlet weak var playTimeLabel: UILabel!
+    @IBOutlet weak var seasonEpisodeLabel: UILabel!
     @IBOutlet weak var popularityLabel: UILabel!
     @IBOutlet weak var languageLabel: UILabel!
     @IBOutlet weak var addToFavoriteButton: UIButton!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
 
-    // MARK: - Private properties
-
-    private var movieDetails: MovieDetails?
-
-    // MARK: - Lifecycle
+    private var tvSeriesDetails: TVSeriesDetails?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        title = AppStrings.movieDetailPageTitle
+        title = AppStrings.tvSeriesDetailPageTitle
 
         loadData()
     }
 
-    @IBAction func didTapAddToFavouritesButton(_ sender: Any) {
-
-    }
-
-    // MARK: - Helpers
-
     private func loadData() {
 
         activityIndicator.startAnimating()
-        movieService.getMovieDetails(
-            for: movieId,
+        service.getTVSeriesDetails(
+            for: seriesId,
             onSuccess: {
                 (response) in
 
                 self.activityIndicator.stopAnimating()
-                self.movieDetails = response
+                self.tvSeriesDetails = response
                 self.populateView()
             }, onFailure: {
                 (errorMessage) in
@@ -67,26 +57,25 @@ class MovieDetailVC: UIViewController, StoryboardBased {
     }
 
     private func populateView() {
-        guard let movieDetails = movieDetails else { return }
+        guard let details = tvSeriesDetails else { return }
 
-        titleLabel.text = movieDetails.title
-        overViewLabel.text = movieDetails.overview
-        popularityLabel.text = String(format: "Popularity: %.2f", movieDetails.popularity)
+        titleLabel.text = details.name
+        overViewLabel.text = details.overview
+        popularityLabel.text = String(format: "Popularity: %.2f", details.popularity)
 
-        if movieDetails.genres.count > 0 {
-            var genres = movieDetails.genres.first?.name ?? ""
-            movieDetails.genres.dropFirst().forEach {
+        if details.genres.count > 0 {
+            var genres = details.genres.first?.name ?? ""
+            details.genres.dropFirst().forEach {
                 genres += ", \($0.name)"
             }
             genreLabel.text = "Genre: \(genres)"
         }
-        if let runTime = movieDetails.runtime {
-            playTimeLabel.text = "Play time: \(runTime)"
-        }
-        languageLabel.text = "Language: \(movieDetails.originalLanguage.description)"
+        seasonEpisodeLabel.text = "Season: \(details.numberOfSeasons), Episode: \(details.numberOfEpisodes)"
+        languageLabel.text = "Language: \(details.originalLanguage.description)"
 
         posterView.image = UIImage.photo
-        if let url = URL(string: Constants.BaseImagePaths.poster + movieDetails.posterPath) {
+        if let posterPath = details.posterPath,
+           let url = URL(string: Constants.BaseImagePaths.poster + posterPath) {
             posterView.kf.setImage(with: url)
         }
     }

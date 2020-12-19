@@ -208,6 +208,7 @@ extension HomeVC: MovieSelectionDelegate {
 
 extension HomeVC: TVSeriesSelecetionDelegate {
     func didSelectTVSeries(_ tvSeries: TVSeries) {
-        print(tvSeries)
+        let vc = factory.getTVSeriesDetailVC(for: tvSeries)
+        navigationController?.pushViewController(vc, animated: true)
     }
 }

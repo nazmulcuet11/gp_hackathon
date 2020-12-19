@@ -28,4 +28,11 @@ class ViewControllerFactory {
         vc.movieService = movieService
         return vc
     }
+
+    func getTVSeriesDetailVC(for tvSeries: TVSeries) -> UIViewController {
+        let vc = TVSeriesDetailsVC.instantiate()
+        vc.seriesId = tvSeries.id
+        vc.service = tvSeriesService
+        return vc
+    }
 }

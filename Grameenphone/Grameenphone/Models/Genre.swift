@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MovieGenre: Codable {
+class Genre: Codable {
     let id: Int
     let name: String
 

@@ -46,4 +46,35 @@ class TVSeriesService {
             }
         })
     }
+
+    func getTVSeriesDetails(
+        for tvSeriesId: Int,
+        onSuccess: @escaping (TVSeriesDetails) -> Void,
+        onFailure: @escaping (String) -> Void
+    ) {
+
+        let endPoint = APIEndpoint(
+            method: .get,
+            path: "/tv/\(tvSeriesId)"
+        )
+
+        let parmaeters = ["api_key": Constants.Server.apiKey]
+
+        let router = APIRouter(
+            endpoint: endPoint,
+            parameters: parmaeters,
+            bodyData: nil
+        )
+
+        APIClient.performRequest(router: router, completion: {
+            (result: AFResult<TVSeriesDetails>) in
+
+            switch result {
+            case .success(let response):
+                onSuccess(response)
+            case .failure(let error):
+                onFailure(error.localizedDescription)
+            }
+        })
+    }
 }

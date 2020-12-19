@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17156" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17126"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Series DetailsVC-->
+        <scene sceneID="WjQ-aS-TaO">
+            <objects>
+                <viewController storyboardIdentifier="TVSeriesDetailsVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="67y-gi-WuN" customClass="TVSeriesDetailsVC" customModule="Grameenphone" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Th2-aI-Im7">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="0q3-Mi-O4e">
+                                <rect key="frame" x="107" y="65" width="200" height="197.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="24w-hq-dRY"/>
+                                    <constraint firstAttribute="width" constant="200" id="fre-X2-rCC"/>
+                                </constraints>
+                            </imageView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="ZYs-e4-qLz">
+                                <rect key="frame" x="24" y="284" width="366" height="240"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title: Unknown" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRO-bE-Htv">
+                                        <rect key="frame" x="0.0" y="0.0" width="366" height="33.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Overview: Unknown" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ts5-jy-cNL">
+                                        <rect key="frame" x="0.0" y="43.5" width="366" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Genres: Unknown" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="krV-1v-jBC">
+                                        <rect key="frame" x="0.0" y="74" width="366" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Play Time: Unknown" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKg-We-0Cs">
+                                        <rect key="frame" x="0.0" y="104.5" width="366" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Popularity: Unknown" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JEa-Cd-shv">
+                                        <rect key="frame" x="0.0" y="135" width="366" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Language: Unknown" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b4m-Qk-iO8">
+                                        <rect key="frame" x="0.0" y="165.5" width="366" height="20.5"/>
+                                        <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TXu-g9-fIn">
+                                        <rect key="frame" x="0.0" y="196" width="366" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="p2F-oX-VWz"/>
+                                        </constraints>
+                                        <state key="normal" title="Add to favourites"/>
+                                        <connections>
+                                            <action selector="didTapAddToFavouritesButton:" destination="67y-gi-WuN" eventType="touchUpInside" id="ysB-9h-igq"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="PJL-IA-mHX">
+                                <rect key="frame" x="188.5" y="434.5" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="d5v-en-Xwl"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="d5v-en-Xwl" firstAttribute="trailing" secondItem="ZYs-e4-qLz" secondAttribute="trailing" constant="24" id="7oC-0h-efG"/>
+                            <constraint firstItem="PJL-IA-mHX" firstAttribute="centerX" secondItem="d5v-en-Xwl" secondAttribute="centerX" id="DUo-TE-NsW"/>
+                            <constraint firstItem="ZYs-e4-qLz" firstAttribute="leading" secondItem="d5v-en-Xwl" secondAttribute="leading" constant="24" id="JSj-IN-XkK"/>
+                            <constraint firstItem="0q3-Mi-O4e" firstAttribute="top" secondItem="d5v-en-Xwl" secondAttribute="top" constant="20" id="M7u-UE-5fE"/>
+                            <constraint firstItem="PJL-IA-mHX" firstAttribute="centerY" secondItem="d5v-en-Xwl" secondAttribute="centerY" id="WvS-nN-ASl"/>
+                            <constraint firstItem="0q3-Mi-O4e" firstAttribute="centerX" secondItem="d5v-en-Xwl" secondAttribute="centerX" id="dIj-1L-nVN"/>
+                            <constraint firstItem="ZYs-e4-qLz" firstAttribute="top" secondItem="0q3-Mi-O4e" secondAttribute="bottom" constant="20" id="rsc-n2-EfT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="PJL-IA-mHX" id="TLQ-mi-2B9"/>
+                        <outlet property="addToFavoriteButton" destination="TXu-g9-fIn" id="Rmk-NN-gte"/>
+                        <outlet property="genreLabel" destination="krV-1v-jBC" id="Wvw-V6-9qv"/>
+                        <outlet property="languageLabel" destination="b4m-Qk-iO8" id="Cyd-a1-cOu"/>
+                        <outlet property="overViewLabel" destination="Ts5-jy-cNL" id="0Jv-mr-LdI"/>
+                        <outlet property="popularityLabel" destination="JEa-Cd-shv" id="GRQ-vK-Y5T"/>
+                        <outlet property="posterView" destination="0q3-Mi-O4e" id="2WI-ZA-UfX"/>
+                        <outlet property="seasonEpisodeLabel" destination="YKg-We-0Cs" id="R0X-yE-aqf"/>
+                        <outlet property="titleLabel" destination="QRO-bE-Htv" id="2ej-Lo-O3C"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3IC-FA-NGd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-332" y="88"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="photo" catalog="system" width="128" height="93"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>

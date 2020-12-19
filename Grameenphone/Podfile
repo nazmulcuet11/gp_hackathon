@@ -8,4 +8,5 @@ target 'Grameenphone' do
   # Pods for Grameenphone
   pod 'Alamofire', '~> 5.2'
   pod 'Kingfisher', '~> 5.0'
+  pod 'CocoaLumberjack/Swift'
 end

@@ -11,9 +11,22 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        let service: MovieService = MovieServiceRemote()
+
+        let popularMoviesRequest = PopularMoviesRequest(
+            primaryReleaseYear: "2020",
+            sortBy: "vote_average.desc"
+        )
+        service.getPopularMovies(
+            request: popularMoviesRequest,
+            onSuccess: {
+                (response) in
+                print(response)
+            }, onFailure: {
+                (errorMessage) in
+                print(errorMessage)
+        })
     }
-
-
 }
 

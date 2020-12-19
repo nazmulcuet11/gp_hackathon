@@ -12,6 +12,20 @@
 		7C302E11258DBDF60071471D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C302E0F258DBDF60071471D /* Main.storyboard */; };
 		7C302E13258DBDF80071471D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C302E12258DBDF80071471D /* Assets.xcassets */; };
 		7C302E16258DBDF80071471D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C302E14258DBDF80071471D /* LaunchScreen.storyboard */; };
+		7C302E28258DC2750071471D /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302E27258DC2750071471D /* Movie.swift */; };
+		7C302E2B258DC3170071471D /* PopularMoviesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302E2A258DC3170071471D /* PopularMoviesResponse.swift */; };
+		7C302E2E258DC34A0071471D /* MovieLanguage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302E2D258DC34A0071471D /* MovieLanguage.swift */; };
+		7C302E34258DC3B20071471D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302E33258DC3B20071471D /* Constants.swift */; };
+		7C302E37258DC45D0071471D /* PopularMoviesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302E36258DC45D0071471D /* PopularMoviesRequest.swift */; };
+		7C302E3C258DC5490071471D /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302E3A258DC5490071471D /* APIClient.swift */; };
+		7C302E3D258DC5490071471D /* APIEndpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302E3B258DC5490071471D /* APIEndpoint.swift */; };
+		7C302E44258DC5EB0071471D /* Data+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302E43258DC5EB0071471D /* Data+Extensions.swift */; };
+		7C302E47258DC62A0071471D /* HTTPContentType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302E46258DC62A0071471D /* HTTPContentType.swift */; };
+		7C302E4A258DC6530071471D /* HTTPHeaderField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302E49258DC6530071471D /* HTTPHeaderField.swift */; };
+		7C302E50258DC6BE0071471D /* MovieServiceRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302E4F258DC6BE0071471D /* MovieServiceRemote.swift */; };
+		7C302E54258DCA700071471D /* Encodable+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302E53258DCA700071471D /* Encodable+Extensions.swift */; };
+		7C302E57258DCBC50071471D /* MovieService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302E56258DCBC50071471D /* MovieService.swift */; };
+		7C302E61258DCCC70071471D /* LogFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302E60258DCCC70071471D /* LogFormatter.swift */; };
 		DA92BA6C726C43CCF86138C0 /* Pods_Grameenphone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF9DC214318860404AE0764 /* Pods_Grameenphone.framework */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +38,20 @@
 		7C302E12258DBDF80071471D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7C302E15258DBDF80071471D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7C302E17258DBDF80071471D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C302E27258DC2750071471D /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		7C302E2A258DC3170071471D /* PopularMoviesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesResponse.swift; sourceTree = "<group>"; };
+		7C302E2D258DC34A0071471D /* MovieLanguage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieLanguage.swift; sourceTree = "<group>"; };
+		7C302E33258DC3B20071471D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		7C302E36258DC45D0071471D /* PopularMoviesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularMoviesRequest.swift; sourceTree = "<group>"; };
+		7C302E3A258DC5490071471D /* APIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		7C302E3B258DC5490071471D /* APIEndpoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIEndpoint.swift; sourceTree = "<group>"; };
+		7C302E43258DC5EB0071471D /* Data+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extensions.swift"; sourceTree = "<group>"; };
+		7C302E46258DC62A0071471D /* HTTPContentType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPContentType.swift; sourceTree = "<group>"; };
+		7C302E49258DC6530071471D /* HTTPHeaderField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeaderField.swift; sourceTree = "<group>"; };
+		7C302E4F258DC6BE0071471D /* MovieServiceRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieServiceRemote.swift; sourceTree = "<group>"; };
+		7C302E53258DCA700071471D /* Encodable+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Encodable+Extensions.swift"; sourceTree = "<group>"; };
+		7C302E56258DCBC50071471D /* MovieService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieService.swift; sourceTree = "<group>"; };
+		7C302E60258DCCC70071471D /* LogFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogFormatter.swift; sourceTree = "<group>"; };
 		884BF33E7F8572A432D3FEF2 /* Pods-Grameenphone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grameenphone.debug.xcconfig"; path = "Target Support Files/Pods-Grameenphone/Pods-Grameenphone.debug.xcconfig"; sourceTree = "<group>"; };
 		BB10477B0A1260BD1D09F340 /* Pods-Grameenphone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grameenphone.release.xcconfig"; path = "Target Support Files/Pods-Grameenphone/Pods-Grameenphone.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -70,6 +98,12 @@
 		7C302E08258DBDF60071471D /* Grameenphone */ = {
 			isa = PBXGroup;
 			children = (
+				7C302E40258DC5780071471D /* Utils */,
+				7C302E3F258DC5660071471D /* Extensions */,
+				7C302E32258DC3990071471D /* Configurations */,
+				7C302E31258DC38E0071471D /* Networking */,
+				7C302E4E258DC6980071471D /* Services */,
+				7C302E26258DC2600071471D /* Models */,
 				7C302E09258DBDF60071471D /* AppDelegate.swift */,
 				7C302E0D258DBDF60071471D /* ViewController.swift */,
 				7C302E0F258DBDF60071471D /* Main.storyboard */,
@@ -78,6 +112,62 @@
 				7C302E17258DBDF80071471D /* Info.plist */,
 			);
 			path = Grameenphone;
+			sourceTree = "<group>";
+		};
+		7C302E26258DC2600071471D /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				7C302E27258DC2750071471D /* Movie.swift */,
+				7C302E2D258DC34A0071471D /* MovieLanguage.swift */,
+				7C302E36258DC45D0071471D /* PopularMoviesRequest.swift */,
+				7C302E2A258DC3170071471D /* PopularMoviesResponse.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		7C302E31258DC38E0071471D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				7C302E46258DC62A0071471D /* HTTPContentType.swift */,
+				7C302E49258DC6530071471D /* HTTPHeaderField.swift */,
+				7C302E3A258DC5490071471D /* APIClient.swift */,
+				7C302E3B258DC5490071471D /* APIEndpoint.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		7C302E32258DC3990071471D /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				7C302E33258DC3B20071471D /* Constants.swift */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		7C302E3F258DC5660071471D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				7C302E43258DC5EB0071471D /* Data+Extensions.swift */,
+				7C302E53258DCA700071471D /* Encodable+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		7C302E40258DC5780071471D /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				7C302E60258DCCC70071471D /* LogFormatter.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		7C302E4E258DC6980071471D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				7C302E56258DCBC50071471D /* MovieService.swift */,
+				7C302E4F258DC6BE0071471D /* MovieServiceRemote.swift */,
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		CF4FD83F2CDEC7A0A07D568E /* Frameworks */ = {
@@ -202,8 +292,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C302E37258DC45D0071471D /* PopularMoviesRequest.swift in Sources */,
+				7C302E4A258DC6530071471D /* HTTPHeaderField.swift in Sources */,
+				7C302E3D258DC5490071471D /* APIEndpoint.swift in Sources */,
+				7C302E61258DCCC70071471D /* LogFormatter.swift in Sources */,
 				7C302E0E258DBDF60071471D /* ViewController.swift in Sources */,
+				7C302E50258DC6BE0071471D /* MovieServiceRemote.swift in Sources */,
+				7C302E2E258DC34A0071471D /* MovieLanguage.swift in Sources */,
+				7C302E3C258DC5490071471D /* APIClient.swift in Sources */,
+				7C302E54258DCA700071471D /* Encodable+Extensions.swift in Sources */,
+				7C302E47258DC62A0071471D /* HTTPContentType.swift in Sources */,
+				7C302E57258DCBC50071471D /* MovieService.swift in Sources */,
 				7C302E0A258DBDF60071471D /* AppDelegate.swift in Sources */,
+				7C302E28258DC2750071471D /* Movie.swift in Sources */,
+				7C302E2B258DC3170071471D /* PopularMoviesResponse.swift in Sources */,
+				7C302E34258DC3B20071471D /* Constants.swift in Sources */,
+				7C302E44258DC5EB0071471D /* Data+Extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

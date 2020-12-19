@@ -3,8 +3,9 @@ Grameenphone - iOS Hackathon Project
 
 ## Dependency
 1. Alamofire
-2. Kingfisher
-3. CocoaLumberjack
+2. AlamofireURLCache
+3. Kingfisher
+4. CocoaLumberjack
 
 ## How to RUN?
 This project uses CocoaPods as a dependency manager. Install CocoaPods if don't have already.

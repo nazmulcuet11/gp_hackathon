@@ -63,8 +63,10 @@
 		7C302EA4258DE7910071471D /* TVSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302EA3258DE7910071471D /* TVSeries.swift */; };
 		7C302EA7258DE7BA0071471D /* PopularTVSeriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302EA6258DE7BA0071471D /* PopularTVSeriesResponse.swift */; };
 		7C473789258DEA4800F9D642 /* UICollectionView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C473788258DEA4800F9D642 /* UICollectionView+Convenience.swift */; };
-		7CC773BC258E2487001A11F7 /* FauvoriteItemsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC773BB258E2487001A11F7 /* FauvoriteItemsVC.swift */; };
-		7CC773C0258E24A7001A11F7 /* FauvoriteItemsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC773BF258E24A7001A11F7 /* FauvoriteItemsVC.storyboard */; };
+		7C5083CC258E2ECD001B956A /* SinglLineButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C5083CA258E2ECD001B956A /* SinglLineButtonCell.swift */; };
+		7C5083CD258E2ECD001B956A /* SinglLineButtonCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C5083CB258E2ECD001B956A /* SinglLineButtonCell.xib */; };
+		7CC773BC258E2487001A11F7 /* FavouriteItemsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC773BB258E2487001A11F7 /* FavouriteItemsVC.swift */; };
+		7CC773C0258E24A7001A11F7 /* FavouriteItemsVC.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7CC773BF258E24A7001A11F7 /* FavouriteItemsVC.storyboard */; };
 		7CC773C4258E24E6001A11F7 /* FavouriteItemsProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CC773C3258E24E6001A11F7 /* FavouriteItemsProvider.swift */; };
 		DA92BA6C726C43CCF86138C0 /* Pods_Grameenphone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF9DC214318860404AE0764 /* Pods_Grameenphone.framework */; };
 /* End PBXBuildFile section */
@@ -129,8 +131,10 @@
 		7C302EA3258DE7910071471D /* TVSeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeries.swift; sourceTree = "<group>"; };
 		7C302EA6258DE7BA0071471D /* PopularTVSeriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTVSeriesResponse.swift; sourceTree = "<group>"; };
 		7C473788258DEA4800F9D642 /* UICollectionView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Convenience.swift"; sourceTree = "<group>"; };
-		7CC773BB258E2487001A11F7 /* FauvoriteItemsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FauvoriteItemsVC.swift; sourceTree = "<group>"; };
-		7CC773BF258E24A7001A11F7 /* FauvoriteItemsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FauvoriteItemsVC.storyboard; sourceTree = "<group>"; };
+		7C5083CA258E2ECD001B956A /* SinglLineButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SinglLineButtonCell.swift; sourceTree = "<group>"; };
+		7C5083CB258E2ECD001B956A /* SinglLineButtonCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SinglLineButtonCell.xib; sourceTree = "<group>"; };
+		7CC773BB258E2487001A11F7 /* FavouriteItemsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteItemsVC.swift; sourceTree = "<group>"; };
+		7CC773BF258E24A7001A11F7 /* FavouriteItemsVC.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FavouriteItemsVC.storyboard; sourceTree = "<group>"; };
 		7CC773C3258E24E6001A11F7 /* FavouriteItemsProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteItemsProvider.swift; sourceTree = "<group>"; };
 		884BF33E7F8572A432D3FEF2 /* Pods-Grameenphone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grameenphone.debug.xcconfig"; path = "Target Support Files/Pods-Grameenphone/Pods-Grameenphone.debug.xcconfig"; sourceTree = "<group>"; };
 		BB10477B0A1260BD1D09F340 /* Pods-Grameenphone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grameenphone.release.xcconfig"; path = "Target Support Files/Pods-Grameenphone/Pods-Grameenphone.release.xcconfig"; sourceTree = "<group>"; };
@@ -324,6 +328,8 @@
 			children = (
 				7C4737B1258DF4FE00F9D642 /* PopularMovies */,
 				7C2123D7258DF54800EB0039 /* PopularTVSeries */,
+				7C5083CA258E2ECD001B956A /* SinglLineButtonCell.swift */,
+				7C5083CB258E2ECD001B956A /* SinglLineButtonCell.xib */,
 				7C302E82258DD7020071471D /* HomeSceneTableHeaderView.swift */,
 				7C302E85258DD72B0071471D /* HomeSceneTableHeaderView.xib */,
 				7C212418258E06F000EB0039 /* TrendingContentCell.swift */,
@@ -357,8 +363,8 @@
 		7CC773BE258E248D001A11F7 /* FavouriteItems */ = {
 			isa = PBXGroup;
 			children = (
-				7CC773BB258E2487001A11F7 /* FauvoriteItemsVC.swift */,
-				7CC773BF258E24A7001A11F7 /* FauvoriteItemsVC.storyboard */,
+				7CC773BB258E2487001A11F7 /* FavouriteItemsVC.swift */,
+				7CC773BF258E24A7001A11F7 /* FavouriteItemsVC.storyboard */,
 			);
 			path = FavouriteItems;
 			sourceTree = "<group>";
@@ -438,9 +444,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7C5083CD258E2ECD001B956A /* SinglLineButtonCell.xib in Resources */,
 				7C302E16258DBDF80071471D /* LaunchScreen.storyboard in Resources */,
 				7C302E86258DD72B0071471D /* HomeSceneTableHeaderView.xib in Resources */,
-				7CC773C0258E24A7001A11F7 /* FauvoriteItemsVC.storyboard in Resources */,
+				7CC773C0258E24A7001A11F7 /* FavouriteItemsVC.storyboard in Resources */,
 				7C302E72258DCE6B0071471D /* HomeVC.storyboard in Resources */,
 				7C212434258E181900EB0039 /* TVSeriesDetailsVC.storyboard in Resources */,
 				7C2123E7258DF5D200EB0039 /* MoviesCollectionViewContainerCell.xib in Resources */,
@@ -523,6 +530,7 @@
 				7C473789258DEA4800F9D642 /* UICollectionView+Convenience.swift in Sources */,
 				7C21240A258E044600EB0039 /* TrendingContentService.swift in Sources */,
 				7C302E50258DC6BE0071471D /* MovieService.swift in Sources */,
+				7C5083CC258E2ECD001B956A /* SinglLineButtonCell.swift in Sources */,
 				7C2123E0258DF54800EB0039 /* TVSeriesCell.swift in Sources */,
 				7C302E2E258DC34A0071471D /* Language.swift in Sources */,
 				7C302E6B258DCDD90071471D /* StoryboardBased.swift in Sources */,
@@ -542,7 +550,7 @@
 				7C302E6A258DCDD90071471D /* UITableView+Convenience.swift in Sources */,
 				7C302E28258DC2750071471D /* Movie.swift in Sources */,
 				7C302E2B258DC3170071471D /* PopularMoviesResponse.swift in Sources */,
-				7CC773BC258E2487001A11F7 /* FauvoriteItemsVC.swift in Sources */,
+				7CC773BC258E2487001A11F7 /* FavouriteItemsVC.swift in Sources */,
 				7C2123FB258E02C400EB0039 /* TrendingContent.swift in Sources */,
 				7C302E69258DCDD90071471D /* NibBased.swift in Sources */,
 				7C302E9E258DE0EA0071471D /* UIImage+Extensions.swift in Sources */,

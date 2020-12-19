@@ -44,6 +44,7 @@ class HomeVC: UIViewController, StoryboardBased {
 
         tableView.registerNibCell(MoviesCollectionViewContainerCell.self)
         tableView.registerNibCell(TVSeriesCollectionViewContainerCell.self)
+        tableView.registerNibCell(SinglLineButtonCell.self)
         tableView.registerNibCell(TrendingContentCell.self)
 
         tableView.registerNibHeaderFooter(HomeSceneTableHeaderView.self)
@@ -130,18 +131,26 @@ class HomeVC: UIViewController, StoryboardBased {
             }
         )
     }
+
+    func navigateToFavouriteItemVC() {
+        let vc = factory.getFavouriteItemsVC()
+        navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
 extension HomeVC {
     enum SectionTypes: CaseIterable {
         case popularMovies
         case tvSeries
+        case favouriteItems
         case trendingContent
 
         var title: String {
             switch self {
             case .popularMovies:
                 return "Popular Movies"
+            case .favouriteItems:
+                return "View favourite items"
             case .tvSeries:
                 return "Popular TV Series"
             case .trendingContent:
@@ -163,6 +172,8 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
             return 1
         case .tvSeries:
             return 1
+        case .favouriteItems:
+            return 1
         case .trendingContent:
             return trendingContents.count
         }
@@ -179,6 +190,12 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
             let cell = tableView.dequeueReusableCell(TVSeriesCollectionViewContainerCell.self, for: indexPath)
             cell.configure(with: tvSerieses, loading: loadingTVSeries, delegate: self)
             return cell
+        case .favouriteItems:
+            let cell = tableView.dequeueReusableCell(SinglLineButtonCell.self, for: indexPath)
+            cell.configure(title: SectionTypes.favouriteItems.title) {
+                self.navigateToFavouriteItemVC()
+            }
+            return cell
         case .trendingContent:
             let cell = tableView.dequeueReusableCell(TrendingContentCell.self, for: indexPath)
             let trendingContent = trendingContents[indexPath.row]
@@ -188,14 +205,25 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 40
+        let sectionType = SectionTypes.allCases[section]
+        switch sectionType {
+        case .favouriteItems:
+            return 1
+        default:
+            return 40
+        }
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let sectionType = SectionTypes.allCases[section]
-        let view = tableView.dequeueReusableHeaderFooterView(HomeSceneTableHeaderView.self)
-        view.setTitle(sectionType.title)
-        return view
+        switch sectionType {
+        case .favouriteItems:
+            return nil
+        default:
+            let view = tableView.dequeueReusableHeaderFooterView(HomeSceneTableHeaderView.self)
+            view.setTitle(sectionType.title)
+            return view
+        }
     }
 }
 

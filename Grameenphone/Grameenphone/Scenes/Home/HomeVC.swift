@@ -12,6 +12,7 @@ class HomeVC: UIViewController, StoryboardBased {
     // MARK: - Dependency
 
     var movieService: MovieService!
+    var tvSeriesService: TVSeriesService!
 
     // MARK: - Outlets
 
@@ -22,6 +23,9 @@ class HomeVC: UIViewController, StoryboardBased {
 
     private var loadingMovies = false
     private var movies = [Movie]()
+
+    private var loadingTVSeries = false
+    private var tvSerieses = [TVSeries]()
 
     // MARK: - Lifecycle
 
@@ -51,8 +55,8 @@ class HomeVC: UIViewController, StoryboardBased {
 
         activityIndicator.startAnimating()
 
-        loadingMovies = true
         // load movies
+        loadingMovies = true
         let movieRequest = PopularMoviesRequest(
             primaryReleaseYear: "2020",
             sortBy: "vote_average.desc"
@@ -70,6 +74,30 @@ class HomeVC: UIViewController, StoryboardBased {
                 (errorMessage) in
 
                 self.loadingMovies = false
+                self.activityIndicator.stopAnimating()
+                showAlert(title: "Failed", message: errorMessage, on: self)
+            }
+        )
+
+        // load tv series
+        loadingTVSeries = true
+        let tvSeriesRequest = PopularTVSeriesRequest(
+            primaryReleaseYear: "2020",
+            sortBy: "vote_average.desc"
+        )
+        tvSeriesService.getPopularTVSeries(
+            request: tvSeriesRequest,
+            onSuccess: {
+                (response) in
+
+                self.loadingTVSeries = false
+                self.activityIndicator.stopAnimating()
+                self.tvSerieses = response.results
+                self.tableView.reloadData()
+            }, onFailure: {
+                (errorMessage) in
+
+                self.loadingTVSeries = false
                 self.activityIndicator.stopAnimating()
                 showAlert(title: "Failed", message: errorMessage, on: self)
             }
@@ -117,6 +145,7 @@ extension HomeVC: UITableViewDataSource, UITableViewDelegate {
             return cell
         case .tvSeries:
             let cell = tableView.dequeueReusableCell(TVSeriesCollectionViewContainerCell.self, for: indexPath)
+            cell.configure(with: tvSerieses, loading: loadingTVSeries)
             return cell
         }
     }

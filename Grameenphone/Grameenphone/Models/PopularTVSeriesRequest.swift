@@ -7,21 +7,14 @@
 
 import Foundation
 
-class PopularTVSeriesRequest: Codable {
-    let page: Int
-    let results: [TVSeries]
-    let totalPages, totalResults: Int
+struct PopularTVSeriesRequest: Codable {
+    let apiKey: String = Constants.Server.apiKey
+    let primaryReleaseYear: String
+    let sortBy: String
 
     enum CodingKeys: String, CodingKey {
-        case page, results
-        case totalPages = "total_pages"
-        case totalResults = "total_results"
-    }
-
-    init(page: Int, results: [TVSeries], totalPages: Int, totalResults: Int) {
-        self.page = page
-        self.results = results
-        self.totalPages = totalPages
-        self.totalResults = totalResults
+        case apiKey = "api_key"
+        case primaryReleaseYear = "primary_release_year"
+        case sortBy = "sort_by"
     }
 }

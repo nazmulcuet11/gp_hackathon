@@ -8,12 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		7C2123DD258DF54800EB0039 /* TVSeriesCollectionViewContainerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2123D8258DF54800EB0039 /* TVSeriesCollectionViewContainerCell.xib */; };
-		7C2123DE258DF54800EB0039 /* TVSeriesDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2123D9258DF54800EB0039 /* TVSeriesDataSource.swift */; };
 		7C2123DF258DF54800EB0039 /* TVSeriesCollectionViewContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2123DA258DF54800EB0039 /* TVSeriesCollectionViewContainerCell.swift */; };
 		7C2123E0258DF54800EB0039 /* TVSeriesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2123DB258DF54800EB0039 /* TVSeriesCell.swift */; };
 		7C2123E1258DF54800EB0039 /* TVSeriesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2123DC258DF54800EB0039 /* TVSeriesCell.xib */; };
 		7C2123E6258DF5D200EB0039 /* MoviesCollectionViewContainerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2123E4258DF5D200EB0039 /* MoviesCollectionViewContainerCell.swift */; };
 		7C2123E7258DF5D200EB0039 /* MoviesCollectionViewContainerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7C2123E5258DF5D200EB0039 /* MoviesCollectionViewContainerCell.xib */; };
+		7C2123F1258DFF2100EB0039 /* TVSeriesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2123F0258DFF2100EB0039 /* TVSeriesService.swift */; };
+		7C2123F5258DFF8D00EB0039 /* PopularTVSeriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2123F4258DFF8D00EB0039 /* PopularTVSeriesRequest.swift */; };
+		7C2123F8258DFFD400EB0039 /* TVSeriesServiceRemote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C2123F7258DFFD400EB0039 /* TVSeriesServiceRemote.swift */; };
 		7C302E0A258DBDF60071471D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302E09258DBDF60071471D /* AppDelegate.swift */; };
 		7C302E0E258DBDF60071471D /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302E0D258DBDF60071471D /* HomeVC.swift */; };
 		7C302E13258DBDF80071471D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C302E12258DBDF80071471D /* Assets.xcassets */; };
@@ -48,7 +50,7 @@
 		7C302E9E258DE0EA0071471D /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302E9D258DE0EA0071471D /* UIImage+Extensions.swift */; };
 		7C302EA1258DE6660071471D /* DateHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302EA0258DE6660071471D /* DateHelper.swift */; };
 		7C302EA4258DE7910071471D /* TVSeries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302EA3258DE7910071471D /* TVSeries.swift */; };
-		7C302EA7258DE7BA0071471D /* PopularTVSeriesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302EA6258DE7BA0071471D /* PopularTVSeriesRequest.swift */; };
+		7C302EA7258DE7BA0071471D /* PopularTVSeriesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302EA6258DE7BA0071471D /* PopularTVSeriesResponse.swift */; };
 		7C473789258DEA4800F9D642 /* UICollectionView+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C473788258DEA4800F9D642 /* UICollectionView+Convenience.swift */; };
 		DA92BA6C726C43CCF86138C0 /* Pods_Grameenphone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6CF9DC214318860404AE0764 /* Pods_Grameenphone.framework */; };
 /* End PBXBuildFile section */
@@ -56,12 +58,14 @@
 /* Begin PBXFileReference section */
 		6CF9DC214318860404AE0764 /* Pods_Grameenphone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Grameenphone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C2123D8258DF54800EB0039 /* TVSeriesCollectionViewContainerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TVSeriesCollectionViewContainerCell.xib; sourceTree = "<group>"; };
-		7C2123D9258DF54800EB0039 /* TVSeriesDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVSeriesDataSource.swift; sourceTree = "<group>"; };
 		7C2123DA258DF54800EB0039 /* TVSeriesCollectionViewContainerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVSeriesCollectionViewContainerCell.swift; sourceTree = "<group>"; };
 		7C2123DB258DF54800EB0039 /* TVSeriesCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVSeriesCell.swift; sourceTree = "<group>"; };
 		7C2123DC258DF54800EB0039 /* TVSeriesCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TVSeriesCell.xib; sourceTree = "<group>"; };
 		7C2123E4258DF5D200EB0039 /* MoviesCollectionViewContainerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoviesCollectionViewContainerCell.swift; sourceTree = "<group>"; };
 		7C2123E5258DF5D200EB0039 /* MoviesCollectionViewContainerCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MoviesCollectionViewContainerCell.xib; sourceTree = "<group>"; };
+		7C2123F0258DFF2100EB0039 /* TVSeriesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeriesService.swift; sourceTree = "<group>"; };
+		7C2123F4258DFF8D00EB0039 /* PopularTVSeriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTVSeriesRequest.swift; sourceTree = "<group>"; };
+		7C2123F7258DFFD400EB0039 /* TVSeriesServiceRemote.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeriesServiceRemote.swift; sourceTree = "<group>"; };
 		7C302E06258DBDF60071471D /* Grameenphone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grameenphone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C302E09258DBDF60071471D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7C302E0D258DBDF60071471D /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
@@ -98,7 +102,7 @@
 		7C302E9D258DE0EA0071471D /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		7C302EA0258DE6660071471D /* DateHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateHelper.swift; sourceTree = "<group>"; };
 		7C302EA3258DE7910071471D /* TVSeries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVSeries.swift; sourceTree = "<group>"; };
-		7C302EA6258DE7BA0071471D /* PopularTVSeriesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTVSeriesRequest.swift; sourceTree = "<group>"; };
+		7C302EA6258DE7BA0071471D /* PopularTVSeriesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PopularTVSeriesResponse.swift; sourceTree = "<group>"; };
 		7C473788258DEA4800F9D642 /* UICollectionView+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Convenience.swift"; sourceTree = "<group>"; };
 		884BF33E7F8572A432D3FEF2 /* Pods-Grameenphone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grameenphone.debug.xcconfig"; path = "Target Support Files/Pods-Grameenphone/Pods-Grameenphone.debug.xcconfig"; sourceTree = "<group>"; };
 		BB10477B0A1260BD1D09F340 /* Pods-Grameenphone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Grameenphone.release.xcconfig"; path = "Target Support Files/Pods-Grameenphone/Pods-Grameenphone.release.xcconfig"; sourceTree = "<group>"; };
@@ -128,11 +132,10 @@
 		7C2123D7258DF54800EB0039 /* PopularTVSeries */ = {
 			isa = PBXGroup;
 			children = (
-				7C2123D9258DF54800EB0039 /* TVSeriesDataSource.swift */,
-				7C2123D8258DF54800EB0039 /* TVSeriesCollectionViewContainerCell.xib */,
-				7C2123DA258DF54800EB0039 /* TVSeriesCollectionViewContainerCell.swift */,
 				7C2123DB258DF54800EB0039 /* TVSeriesCell.swift */,
 				7C2123DC258DF54800EB0039 /* TVSeriesCell.xib */,
+				7C2123DA258DF54800EB0039 /* TVSeriesCollectionViewContainerCell.swift */,
+				7C2123D8258DF54800EB0039 /* TVSeriesCollectionViewContainerCell.xib */,
 			);
 			name = PopularTVSeries;
 			path = Grameenphone/Scenes/Home/PopularTVSeries;
@@ -181,7 +184,8 @@
 				7C302E36258DC45D0071471D /* PopularMoviesRequest.swift */,
 				7C302E2A258DC3170071471D /* PopularMoviesResponse.swift */,
 				7C302EA3258DE7910071471D /* TVSeries.swift */,
-				7C302EA6258DE7BA0071471D /* PopularTVSeriesRequest.swift */,
+				7C302EA6258DE7BA0071471D /* PopularTVSeriesResponse.swift */,
+				7C2123F4258DFF8D00EB0039 /* PopularTVSeriesRequest.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -233,6 +237,8 @@
 			children = (
 				7C302E56258DCBC50071471D /* MovieService.swift */,
 				7C302E4F258DC6BE0071471D /* MovieServiceRemote.swift */,
+				7C2123F0258DFF2100EB0039 /* TVSeriesService.swift */,
+				7C2123F7258DFFD400EB0039 /* TVSeriesServiceRemote.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -426,6 +432,7 @@
 				7C302EA1258DE6660071471D /* DateHelper.swift in Sources */,
 				7C302EA4258DE7910071471D /* TVSeries.swift in Sources */,
 				7C302E9A258DDF260071471D /* ViewControllerFactory.swift in Sources */,
+				7C2123F5258DFF8D00EB0039 /* PopularTVSeriesRequest.swift in Sources */,
 				7C302E0E258DBDF60071471D /* HomeVC.swift in Sources */,
 				7C302E8F258DDB0D0071471D /* AppStrings.swift in Sources */,
 				7C302E96258DDDCC0071471D /* GlobalHelpers.swift in Sources */,
@@ -435,13 +442,14 @@
 				7C2123E0258DF54800EB0039 /* TVSeriesCell.swift in Sources */,
 				7C302E2E258DC34A0071471D /* MovieLanguage.swift in Sources */,
 				7C302E6B258DCDD90071471D /* StoryboardBased.swift in Sources */,
-				7C302EA7258DE7BA0071471D /* PopularTVSeriesRequest.swift in Sources */,
+				7C302EA7258DE7BA0071471D /* PopularTVSeriesResponse.swift in Sources */,
 				7C302E3C258DC5490071471D /* APIClient.swift in Sources */,
 				7C302E54258DCA700071471D /* Encodable+Extensions.swift in Sources */,
 				7C302E47258DC62A0071471D /* HTTPContentType.swift in Sources */,
-				7C2123DE258DF54800EB0039 /* TVSeriesDataSource.swift in Sources */,
 				7C302E83258DD7020071471D /* HomeSceneTableHeaderView.swift in Sources */,
 				7C302E57258DCBC50071471D /* MovieService.swift in Sources */,
+				7C2123F8258DFFD400EB0039 /* TVSeriesServiceRemote.swift in Sources */,
+				7C2123F1258DFF2100EB0039 /* TVSeriesService.swift in Sources */,
 				7C302E0A258DBDF60071471D /* AppDelegate.swift in Sources */,
 				7C302E7E258DD0820071471D /* MovieCell.swift in Sources */,
 				7C302E89258DDA210071471D /* HomeNavVC.swift in Sources */,

@@ -3,12 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		7C302E0A258DBDF60071471D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302E09258DBDF60071471D /* AppDelegate.swift */; };
-		7C302E0C258DBDF60071471D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302E0B258DBDF60071471D /* SceneDelegate.swift */; };
 		7C302E0E258DBDF60071471D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C302E0D258DBDF60071471D /* ViewController.swift */; };
 		7C302E11258DBDF60071471D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7C302E0F258DBDF60071471D /* Main.storyboard */; };
 		7C302E13258DBDF80071471D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7C302E12258DBDF80071471D /* Assets.xcassets */; };
@@ -20,7 +19,6 @@
 		6CF9DC214318860404AE0764 /* Pods_Grameenphone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Grameenphone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C302E06258DBDF60071471D /* Grameenphone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Grameenphone.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7C302E09258DBDF60071471D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7C302E0B258DBDF60071471D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		7C302E0D258DBDF60071471D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		7C302E10258DBDF60071471D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7C302E12258DBDF80071471D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -48,7 +46,6 @@
 				884BF33E7F8572A432D3FEF2 /* Pods-Grameenphone.debug.xcconfig */,
 				BB10477B0A1260BD1D09F340 /* Pods-Grameenphone.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -74,7 +71,6 @@
 			isa = PBXGroup;
 			children = (
 				7C302E09258DBDF60071471D /* AppDelegate.swift */,
-				7C302E0B258DBDF60071471D /* SceneDelegate.swift */,
 				7C302E0D258DBDF60071471D /* ViewController.swift */,
 				7C302E0F258DBDF60071471D /* Main.storyboard */,
 				7C302E12258DBDF80071471D /* Assets.xcassets */,
@@ -208,7 +204,6 @@
 			files = (
 				7C302E0E258DBDF60071471D /* ViewController.swift in Sources */,
 				7C302E0A258DBDF60071471D /* AppDelegate.swift in Sources */,
-				7C302E0C258DBDF60071471D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

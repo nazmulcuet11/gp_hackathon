@@ -14,8 +14,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     let fileLogger: DDFileLogger = DDFileLogger()
+    let viewControllerFactory = ViewControllerFactory()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+
+        window = UIWindow()
+
+        let navVC = HomeNavVC(rootViewController: viewControllerFactory.getHomeVC())
+        window?.rootViewController = navVC
+
+        setupLogger()
 
         return true
     }
@@ -28,10 +36,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         DDLog.add(fileLogger)
 
         // xcode console
-        if let consoleLogger = DDTTYLogger.sharedInstance {
-            consoleLogger.logFormatter = LogFormatter()
-            DDLog.add(consoleLogger)
-        }
+        let consoleLogger = DDOSLogger.sharedInstance
+        consoleLogger.logFormatter = LogFormatter()
+        DDLog.add(consoleLogger)
     }
 }
 

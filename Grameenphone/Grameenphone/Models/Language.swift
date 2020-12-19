@@ -7,10 +7,11 @@
 
 import Foundation
 
-enum MovieLanguage: String, Codable {
+enum Language: String, Codable {
     case de = "de"
     case en = "en"
     case pt = "pt"
+    case ja = "ja"
 
     var description: String {
         switch self {
@@ -20,6 +21,8 @@ enum MovieLanguage: String, Codable {
             return "English"
         case .pt:
             return "Portuguese"
+        case .ja:
+            return "Japanese"
         }
     }
 }

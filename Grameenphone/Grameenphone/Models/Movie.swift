@@ -12,7 +12,7 @@ class Movie: Codable {
     let backdropPath: String?
     let genreIDS: [Int]
     let id: Int
-    let originalLanguage: MovieLanguage
+    let originalLanguage: Language
     let originalTitle, overview: String
     let popularity: Double
     let posterPath, releaseDate, title: String
@@ -34,7 +34,7 @@ class Movie: Codable {
         case voteCount = "vote_count"
     }
 
-    init(adult: Bool, backdropPath: String?, genreIDS: [Int], id: Int, originalLanguage: MovieLanguage, originalTitle: String, overview: String, popularity: Double, posterPath: String, releaseDate: String, title: String, video: Bool, voteAverage: Int, voteCount: Int) {
+    init(adult: Bool, backdropPath: String?, genreIDS: [Int], id: Int, originalLanguage: Language, originalTitle: String, overview: String, popularity: Double, posterPath: String, releaseDate: String, title: String, video: Bool, voteAverage: Int, voteCount: Int) {
         self.adult = adult
         self.backdropPath = backdropPath
         self.genreIDS = genreIDS

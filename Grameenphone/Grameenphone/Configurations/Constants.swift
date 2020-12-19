@@ -12,6 +12,7 @@ enum Constants {
         private static let apiVersion = 3
         static let baseURL = "https://api.themoviedb.org/\(apiVersion)"
         static let apiKey = "1a97f3b8d5deee1d649c0025f3acf75c"
+        static let cacheDurationInSeconds = 60
     }
 
     enum BaseImagePaths {

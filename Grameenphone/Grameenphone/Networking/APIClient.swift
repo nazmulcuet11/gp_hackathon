@@ -8,6 +8,7 @@
 
 import Foundation
 import Alamofire
+import AlamofireURLCache5
 
 class APIClient {
     private static func logResponse<T: Decodable>(_ response: DataResponse<T, AFError>) {
@@ -37,9 +38,9 @@ class APIClient {
     @discardableResult
     static func performRequest<T:Decodable>(router: APIRouter, decoder: JSONDecoder = JSONDecoder(), completion:@escaping (AFResult<T>)->Void) -> DataRequest {
 
-        return AF.request(router).responseDecodable(decoder: decoder) { (response: DataResponse<T, AFError>) in
+        return AF.request(router).responseDecodable(completionHandler: { (response: DataResponse<T, AFError>) in
             logResponse(response)
             completion(response.result)
-        }
+        }).cache(maxAge: Constants.Server.cacheDurationInSeconds)
     }
 }

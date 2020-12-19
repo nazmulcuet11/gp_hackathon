@@ -69,7 +69,7 @@
                                         </constraints>
                                         <state key="normal" title="Add to favourites"/>
                                         <connections>
-                                            <action selector="didTapAddToFavouritesButton:" destination="67y-gi-WuN" eventType="touchUpInside" id="ysB-9h-igq"/>
+                                            <action selector="didTapAddToFavouritesButton:" destination="67y-gi-WuN" eventType="touchUpInside" id="ig3-ev-XDW"/>
                                         </connections>
                                     </button>
                                 </subviews>

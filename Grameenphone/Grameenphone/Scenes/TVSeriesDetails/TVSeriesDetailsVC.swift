@@ -11,8 +11,9 @@ class TVSeriesDetailsVC: UIViewController, StoryboardBased {
 
     // MARK: - Dependency
 
-    var seriesId: Int!
+    var tvSeries: TVSeries!
     var service: TVSeriesService!
+    var store: FavouriteItemsSotre!
 
     // MARK: - Outlets
 
@@ -33,14 +34,33 @@ class TVSeriesDetailsVC: UIViewController, StoryboardBased {
 
         title = AppStrings.tvSeriesDetailPageTitle
 
+        setFavButtonTitle()
+
         loadData()
+    }
+
+    @IBAction func didTapAddToFavouritesButton(_ sender: Any) {
+        if store.isFavouriteTVSeries(tvSeries) {
+            store.removeTVSeries(tvSeries)
+        } else {
+            store.addTVSeries(tvSeries)
+        }
+        setFavButtonTitle()
+    }
+    
+    private func setFavButtonTitle() {
+        if store.isFavouriteTVSeries(tvSeries) {
+            addToFavoriteButton.setTitle("Remove from favourite", for: .normal)
+        } else {
+            addToFavoriteButton.setTitle("Add to favourite", for: .normal)
+        }
     }
 
     private func loadData() {
 
         activityIndicator.startAnimating()
         service.getTVSeriesDetails(
-            for: seriesId,
+            for: tvSeries.id,
             onSuccess: {
                 (response) in
 

@@ -11,8 +11,9 @@ class MovieDetailVC: UIViewController, StoryboardBased {
 
     // MARK: - Dependency
 
-    var movieId: Int!
+    var movie: Movie!
     var movieService: MovieService!
+    var store: FavouriteItemsSotre!
 
     // MARK: - Outlets
 
@@ -37,20 +38,35 @@ class MovieDetailVC: UIViewController, StoryboardBased {
 
         title = AppStrings.movieDetailPageTitle
 
+        setFavButtonTitle()
+
         loadData()
     }
 
     @IBAction func didTapAddToFavouritesButton(_ sender: Any) {
-
+        if store.isFavouriteMovie(movie) {
+            store.removeMovie(movie)
+        } else {
+            store.addMovie(movie)
+        }
+        setFavButtonTitle()
     }
 
     // MARK: - Helpers
+
+    private func setFavButtonTitle() {
+        if store.isFavouriteMovie(movie) {
+            addToFavoriteButton.setTitle("Remove from favourite", for: .normal)
+        } else {
+            addToFavoriteButton.setTitle("Add to favourite", for: .normal)
+        }
+    }
 
     private func loadData() {
 
         activityIndicator.startAnimating()
         movieService.getMovieDetails(
-            for: movieId,
+            for: movie.id,
             onSuccess: {
                 (response) in
 

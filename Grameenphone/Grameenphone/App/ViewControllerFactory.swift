@@ -12,6 +12,7 @@ class ViewControllerFactory {
     private let movieService = MovieService()
     private let tvSeriesService = TVSeriesService()
     private let trendingContentService = TrendingContentService()
+    private let favouriteItemsStore = FavouriteItemsSotre()
 
     func getHomeVC() -> UIViewController {
         let vc = HomeVC.instantiate()
@@ -24,15 +25,17 @@ class ViewControllerFactory {
 
     func getMovieDetailVC(for movie: Movie) -> UIViewController {
         let vc = MovieDetailVC.instantiate()
-        vc.movieId = movie.id
+        vc.movie = movie
         vc.movieService = movieService
+        vc.store = favouriteItemsStore
         return vc
     }
 
     func getTVSeriesDetailVC(for tvSeries: TVSeries) -> UIViewController {
         let vc = TVSeriesDetailsVC.instantiate()
-        vc.seriesId = tvSeries.id
+        vc.tvSeries = tvSeries
         vc.service = tvSeriesService
+        vc.store = favouriteItemsStore
         return vc
     }
 }
